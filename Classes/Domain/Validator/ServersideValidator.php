@@ -317,7 +317,7 @@ class ServersideValidator extends AbstractValidator
             if (method_exists($value, 'current')) {
                 $current = $value->current();
 
-                if ($current instanceof FileReference) {
+                if ($current === null || $current instanceof FileReference) {
                     return true;
                 }
 
